@@ -1,0 +1,140 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    display:flex;
+}
+.left-section{
+    height: 100%;
+    display: grid;
+    place-content: center;
+    width: 40%;
+    background: black;
+    color: white;
+    font-size: 72px;
+}
+
+.right-section{
+    flex: 1;
+    display: grid;
+    place-content: center;
+    font-family: 'Lato', sans-serif;
+    background: #F5F5F5;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.titles h2{
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 3px;
+}
+.titles span{
+    font-size: 16px;
+}
+.google{
+    display: flex;
+    justify-content: space-between;
+}
+.provider-btn,
+.sign-btn{
+    padding: 7px 19px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #858585;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+}
+.sign-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.input-grp{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.input-grp input{
+    height: 40px;
+    background-color: #F5F5F5;
+    outline: none;
+    border: none;
+    padding: 11px 15px;
+    border-radius: 10px;
+}
+.forgot{
+    color: #346BD4;
+    cursor: pointer;
+}
+.sign-btn{
+    background-color: black;
+    color: white;
+    height: 40px;
+    justify-content: center;
+    font-size: 16px;
+}
+.card p{
+    text-align: center;
+    color: #858585;
+}
+.link{
+    color: #346BD4;
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 1300px){
+    .left-section{
+        font-size: 50px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .container{
+        flex-direction: column;
+    }
+    .left-section{
+        width: 100%;
+        font-size: 42px;
+        height: 20%;
+    }
+    .right-section{
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+    .card{
+        align-items: center;
+    }
+    .google{
+        gap: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+    .provider-btn{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 400px){
+    .right-section{
+        padding:50px 10px;
+    }
+    .sign-form{
+        width: 100%;
+    }
+    .card p{
+        display: flex;
+        flex-direction: column;
+    }
+}
