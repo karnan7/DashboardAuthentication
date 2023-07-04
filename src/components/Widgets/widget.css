@@ -1,0 +1,20 @@
+.widget-wrap{
+    border-radius: 20px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.widget-logo{
+    align-self: flex-end;
+    width: 10px;
+    height: 10px;
+}
+.widget-wrap span{
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+}
+.widget-wrap h2{
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif;
+}

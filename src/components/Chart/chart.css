@@ -1,0 +1,42 @@
+.chart-container{
+    background-color: white;
+    padding: 10px 40px;
+    border-radius: 20px;
+}
+.chart-title span{
+    cursor: pointer;
+}
+.chart-header,
+.chart-labels,
+.label-grp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.chart-header h2{
+    font-size: 16px;
+}
+.chart-header span{
+    color: #858585;
+    font-size: 12px;
+}
+.chart-labels{
+    gap: 30px;
+    margin-bottom: 0px;
+}
+
+.label-grp{
+    gap: 10px;
+    margin-bottom: 0px;
+}
+.guest-label,
+.user-label{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #E9A0A0;
+}
+.user-label{
+    background-color: #9BDD7C;
+}
