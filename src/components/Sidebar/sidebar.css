@@ -1,0 +1,38 @@
+.sidebar{
+    background-color: black;
+    color: white;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    border-radius: 30px;
+    height: 100%;
+}
+.logo{
+    font-size: 36px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.side-links ul{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.side-links ul li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.side-footer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 10px;
+}
+.side-footer a{
+    font-size: 14px;
+}
