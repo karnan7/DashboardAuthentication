@@ -2,10 +2,11 @@ import { useContext, useState } from 'react'
 import '../SignIn/signin.css'
 import { FcGoogle } from 'react-icons/fc'
 import { FaApple } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import { UserContext } from '../../context/UserContext'
+import { Link, Navigate } from 'react-router-dom'
+import { UserContext } from "../../context/UserContext"
 import { auth } from '../../config/firebase'
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { GoogleAuthProvider, OAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { toast } from 'react-hot-toast'
 
 const SignIn = () => {
 
@@ -18,10 +19,32 @@ const SignIn = () => {
     signInWithPopup(auth, googleAuthProvider)
     .then((userCredential) => {
       context.setUser(userCredential.user);
-      console.log(userCredential)
+    })
+    .catch((error) => {
+      toast.error("User not found. Please sign up");
     })
   }
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      context.setUser(userCredential.user);
+    })
+    .catch((error) => {
+      if(!email){
+        toast.error("Email is required")
+      }else if(!password){
+        toast.error('Enter your password')
+      }else{
+        toast.error("User not found. Enter valid email and password")
+      }
+    })
+  }
+
+  if(context.user?.uid){
+    return <Navigate to="/home"/>
+  }
   return (
     <div className='container'>
       <div className="left-section">
@@ -35,7 +58,7 @@ const SignIn = () => {
           </div>
 
           <div className="google">
-            <button className='provider-btn'>
+            <button onClick={handleGoogleSignIn} className='provider-btn'>
               <FcGoogle size="20px"/>
               <span>Sign in with Google</span>
             </button>
@@ -45,7 +68,7 @@ const SignIn = () => {
             </button>
           </div>
 
-          <form className='sign-form'>
+          <form onSubmit={handleFormSubmit} className='sign-form'>
             <div className="input-grp">
               <label htmlFor="email">Email address</label>
               <input 
