@@ -15,6 +15,17 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleGoogleSignIn = () => {
+    const googleAuthProvider = new GoogleAuthProvider();
+    signInWithPopup(auth, googleAuthProvider)
+    .then((userCredential) => {
+      context.setUser(userCredential.user);
+    })
+    .catch((error) => {
+      toast.error("User not found. Please sign up");
+    })
+  }
+
   const handleSignUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
@@ -59,7 +70,7 @@ const SignUp = () => {
           </div>
 
           <div className="google">
-            <button className='provider-btn'>
+            <button onClick={handleGoogleSignIn} className='provider-btn'>
               <FcGoogle size="20px"/>
               <span>Sign up with Google</span>
             </button>
