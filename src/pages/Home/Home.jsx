@@ -55,7 +55,10 @@ const Home = () => {
               <Widget type="likes"/>
               <Widget type="users"/>
             </div>
-            <Chart/>
+            <div className="chart-section">
+              <Chart/>
+            </div>
+
             <div className="bottom-section">
               <Products/>
               <Schedule/>

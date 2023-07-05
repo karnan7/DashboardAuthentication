@@ -1,7 +1,7 @@
 .home{
     min-height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 30px 20px;
     gap: 80px;
     background-color: #F5F5F5;
@@ -34,8 +34,12 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 60px;
 }
+.chart-section{
+    width: 100%;
+}
 
 .bottom-section{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -43,10 +47,14 @@
 
 
 @media screen and (max-width: 1300px){
+    .home{
+        gap: 50px;
+    }
     .home-section{
         align-items: flex-start;
     }
     .widget-section{
+        width: 100%;
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .bottom-section{

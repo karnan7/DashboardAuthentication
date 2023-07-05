@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home/Home";
 
 function App() {
-  const [user, setUser] = useState("user");
+  const [user, setUser] = useState(null);
 
   // useEffect(() => {
   //   const localUser = localStorage.getItem('user');
