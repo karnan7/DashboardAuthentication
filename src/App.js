@@ -8,17 +8,6 @@ import Home from "./pages/Home/Home";
 
 function App() {
   const [user, setUser] = useState(null);
-
-  // useEffect(() => {
-  //   const localUser = localStorage.getItem('user');
-  //   if(localUser){
-  //     setUser(JSON.parse(localUser));
-  //   }
-  // },[])
-
-  // useEffect(() => {
-  //   localStorage.setItem('user', JSON.stringify(user))
-  // }, [user])
   return (
     <div>
       <Router>

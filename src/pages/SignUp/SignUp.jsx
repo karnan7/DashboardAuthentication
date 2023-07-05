@@ -1,11 +1,11 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import '../SignIn/signin.css'
 import { FcGoogle } from 'react-icons/fc'
 import { FaApple } from 'react-icons/fa'
 import { Link, Navigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
 import { auth } from '../../config/firebase'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
 import { toast } from 'react-hot-toast'
 
 const SignUp = () => {
@@ -34,6 +34,14 @@ const SignUp = () => {
       }
     })
   }
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      context.setUser(user);
+    })
+
+    return unsubscribe;
+  }, [])
 
   if(context.user?.uid){
     return <Navigate to="/"/>
