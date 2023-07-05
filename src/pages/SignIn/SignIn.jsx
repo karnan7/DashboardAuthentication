@@ -11,8 +11,8 @@ import { toast } from 'react-hot-toast'
 const SignIn = () => {
 
   const context = useContext(UserContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@abc.com");
+  const [password, setPassword] = useState("asdfghjkl");
 
   const handleGoogleSignIn = () => {
     const googleAuthProvider = new GoogleAuthProvider();
