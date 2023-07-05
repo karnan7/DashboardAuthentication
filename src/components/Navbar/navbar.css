@@ -65,3 +65,15 @@
     align-items: center;
     justify-content: center;
 }
+
+
+@media screen and (max-width: 1300px){
+    .nav-section{
+        justify-content: flex-start;
+        gap: 30px;
+    }
+    .search-grp,
+    .bell-icon{
+        display: none;
+    }
+}
