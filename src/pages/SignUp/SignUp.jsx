@@ -5,7 +5,7 @@ import { FaApple } from 'react-icons/fa'
 import { Link, Navigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
 import { auth } from '../../config/firebase'
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from 'firebase/auth'
 import { toast } from 'react-hot-toast'
 
 const SignUp = () => {

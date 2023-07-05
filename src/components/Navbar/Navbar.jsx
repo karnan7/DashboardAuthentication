@@ -3,6 +3,7 @@ import { UserContext } from '../../context/UserContext'
 import './navbar.css'
 import { auth } from '../../config/firebase';
 import { signOut } from 'firebase/auth';
+import profile from '../../assets/profile.jpg'
 
 
 const Navbar = () => {
@@ -41,7 +42,7 @@ const Navbar = () => {
         </svg>
 
         <div className="profile-section">
-          <img onClick={() => setDropdown(!dropdown)} className="profile" src={context.user?.photoURL}/>
+          <img onClick={() => setDropdown(!dropdown)} className="profile" src={context.user?.photoURL || profile}/>
           <div 
           className="profile-dropdown"
           style={dropdown ? {display:'flex'} : {}}>

@@ -21,13 +21,10 @@ const Home = () => {
       setIsSmallScreen(window.innerWidth <= 1200);
     };
 
-    // Add event listener for resize
     window.addEventListener('resize', handleResize);
 
-    // Call the handleResize function initially
     handleResize();
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
